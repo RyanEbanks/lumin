@@ -25,7 +25,7 @@ body {
 }
 
 .slider-btn {
-  @apply w-3 h-3 rounded-full hover:bg-white z-10 relative top-8 left-8;
+  @apply w-3 h-3 rounded-full hover:bg-slate-300 z-10 relative top-8 left-8;
 }
 
 .slider {
@@ -35,4 +35,23 @@ body {
 
 .slide {
   @apply ml-auto rounded-md w-[1543px] h-[576px];
+}
+
+.text-for-line-animation {
+  
+}
+
+.line-animation {
+  @apply border-t-[1px] border-white w-16;
+  /* animation: line 1s linear infinite; */
+  transform-origin: left;
+}
+
+@keyframes line {
+  0% {
+    width: 64px;
+  }
+  100%{
+    width: 0px;
+  }
 }

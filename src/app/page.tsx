@@ -2,6 +2,7 @@
 import Navigation from "./navigation/page";
 import Footer from "./footer/page";
 import { useEffect, useState } from "react";
+import About from "./about/page";
 
 export default function Home() {
   const [activeSlider, setActiveSlider] = useState(0)
@@ -28,7 +29,7 @@ useEffect (()=> {
       <Navigation />
       <main className="m-20">
         <div className="flex flex-row">
-          <img src="LUMIN logo.svg" alt="website logo" className="w-[150px] h-[150px]" />
+          <img src="LUMIN-dark-theme.svg" alt="website logo" className="w-[150px] h-[150px] mr-10" />
           {/* Slider Wrapper */}
           <div className="slider-wrapper">
 
@@ -56,6 +57,23 @@ useEffect (()=> {
 
           </div>
         </div>
+          <div className="home-tex-container flex flex-row justify-center items-center space-x-96 h-[200px]">
+            <div className="rotate-90 flex flex-row justify-center items-center space-x-4 w-[200px]">
+              <p className="text-for-line-animation">SCROLL</p>
+              <div className="line-animation"></div>
+            </div>
+            <div>
+              <button className="bg-white w-56 h-20 text-black rounded-full text-2xl flex flex-row items-center justify-center hover:bg-slate-200">
+                Discover
+                <img src="Arrow.svg" alt="right arrow" className="w-10 h-10 ml-2" />
+                </button>
+            </div>
+            <div className="rotate-90 flex flex-row justify-center items-center space-x-4 w-[200px]">
+              <p className="text-for-line-animation">SCROLL</p>
+              <div className="line-animation"></div>
+            </div>
+          </div>
+          <About />
       </main>
       {/* <Footer /> */}
     </div>
