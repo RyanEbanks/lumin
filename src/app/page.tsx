@@ -3,6 +3,7 @@ import Navigation from "./navigation/page";
 import Footer from "./footer/page";
 import { useEffect, useState } from "react";
 import About from "./about/page";
+import Services from "./services/page";
 
 export default function Home() {
   const [activeSlider, setActiveSlider] = useState(0)
@@ -29,6 +30,8 @@ useEffect (()=> {
       <Navigation />
       <main className="m-20">
         <div className="flex flex-row">
+          {/* <img src={darkMode ? "LUMIN-dark-theme.svg" : "LUMIN logo.svg"} alt="website logo" className="w-[150px] h-[150px] mr-10" /> */}
+          {/* Fix this */}
           <img src="LUMIN-dark-theme.svg" alt="website logo" className="w-[150px] h-[150px] mr-10" />
           {/* Slider Wrapper */}
           <div className="slider-wrapper">
@@ -74,6 +77,7 @@ useEffect (()=> {
             </div>
           </div>
           <About />
+          {/* <Services /> */}
       </main>
       {/* <Footer /> */}
     </div>

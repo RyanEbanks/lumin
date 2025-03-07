@@ -2,16 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+.root {
   --background: #ffffff;
+  --background-2: #fefffe;
+  --background-3: #edecec;
+  --background-4: #dadadb;
   --foreground: #171717;
+  --foreground-2: #272626;
+  --foreground-3: #3b3b3a;
+  --foreground-4: #4c4c4c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #171717;
+    --background-2: #272626;
+    --background-3: #3b3b3a;
+    --background-4: #4c4c4c;
     --foreground: #ededed;
+    --foreground-2: #fefffe;
+    --foreground-3: #edecec;
+    --foreground-4: #dadadb;
   }
+}
+
+
+.light {
+  --background: #ffffff !important;
+  --background-2: #fefffe !important;
+  --background-3: #edecec !important;
+  --background-4: #dadadb !important;
+  --foreground: #171717 !important;
+  --foreground-2: #272626 !important;
+  --foreground-3: #3b3b3a !important;
+  --foreground-4: #4c4c4c !important;
 }
 
 body {
@@ -37,9 +61,7 @@ body {
   @apply ml-auto rounded-md w-[1543px] h-[576px];
 }
 
-.text-for-line-animation {
-  
-}
+.text-for-line-animation {}
 
 .line-animation {
   @apply border-t-[1px] border-white w-16;
@@ -51,7 +73,15 @@ body {
   0% {
     width: 64px;
   }
-  100%{
+
+  100% {
     width: 0px;
   }
+}
+
+.service-background {
+  background-color: var(--background-2);
+}
+.product-background {
+  background-color: var(--background-3);
 }
