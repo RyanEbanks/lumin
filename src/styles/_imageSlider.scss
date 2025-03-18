@@ -1,0 +1,51 @@
+.scroll {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #fff, #fff, transparent);
+    transition: 0.5s;
+    
+    .scroll-img-container {
+        white-space: nowrap; //Prevents line breaks
+        gap: 2rem;
+    }
+    // .scroll-img-container:first-child {
+    //     animation: animate var(--t) linear infinite;
+    // }
+    // .scroll-img-container:last-child {
+    //     animation: animate2 var(--s) linear infinite;
+    //     animation-delay: calc(var(--t) / 2); //Delay until the first child reaches half way
+    // }
+
+}
+
+// @keyframes animate {
+//     0% {
+//         transform: translate(100%);
+//     }
+//     50% {
+//         transform: translate(-100%);
+//     }
+//     100% {
+//         transform: translateX(-200%);
+//       }
+
+// }
+// @keyframes animate2 {
+//     0% {
+//         transform: translate(100%);
+//     }
+//     50% {
+//         transform: translate(-100%);
+//     }
+//     100% {
+//         transform: translateX(-200%);
+//       }
+// }
+
+.company-logo {
+    width: 200px;
+    height: 200px;
+}

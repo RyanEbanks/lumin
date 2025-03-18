@@ -2,6 +2,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setColor } from '../redux/colorSlice';
 import { RootState } from '../redux/store';
+import '../styles/style.css';
 
 export default function Services() {
   const dispatch = useDispatch();

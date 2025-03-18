@@ -26,17 +26,17 @@ export default function Navigation() {
     return (
         <div>
             {/* Navigation */}
-            <nav className="flex flex-row w-full mt-5">
-                <div className="flex w-1/4 ml-20 items-center">
+            <nav className="nav-container">
+                <div className="nav-child-container">
                     <p>Lumin</p>
                 </div>
-                <ul className="flex flex-row space-x-8 w-1/4 justify-end items-center ml-[40%]">
+                <ul className="nav-list-container">
                     <li>Home</li>
                     <li>About</li>
                     <li>Services</li>
                     <li>Contact</li>
-                    <button className="" onClick={changeMode}>
-                        <img src={darkMode ? "moon_icon.svg" : "sun_icon.svg"} alt="theme icon" className="w-4 h-4" />
+                    <button onClick={changeMode}>
+                        <img src={darkMode ? "moon_icon.svg" : "sun_icon.svg"} alt="theme icon" className="nav-icon" />
                     </button>
                 </ul>
             </nav>
