@@ -1,0 +1,49 @@
+@mixin flexContent($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+.nav-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.nav-container {
+    @include flexContent(row);
+    width: 30%;
+    margin-top: 1.25rem;
+    border-radius: 10px;
+    background-color: rgb(237, 236, 236, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-list-container {
+    @include flexContent(row);
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    >li {
+        list-style: none;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: grey;
+            color: white;
+        }
+    }
+
+    >button {
+        border: none;
+        background: transparent;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: grey;
+        }
+    }
+}

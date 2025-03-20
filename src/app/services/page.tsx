@@ -2,19 +2,15 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setColor } from '../redux/colorSlice';
 import { RootState } from '../redux/store';
-import '../styles/style.css';
 
 export default function Services() {
   const dispatch = useDispatch();
   const selectedColor = useSelector((state: RootState) => state.color.selectedColor);
 
   const headphoneColors = [
-    "black", 
-    "blue-purple", 
-    "chroma", 
-    "gold", 
-    "pink", 
-    "red-blue"
+    "red",
+    "green",
+    "blue"
   ]
   
   return (
@@ -40,13 +36,18 @@ export default function Services() {
           ))}
         </div>
       </div>
-
-      <h1>Trade-In & Upgrade Program ♻️</h1>
-      <p>Upgrade your old Lumin headphones for a discount on the latest models. Keep up with innovation while making an eco-friendly choice!</p>
-      <h1>Premium Packaging & Gifting Options 🎁</h1>
-      <p>Make every purchase feel special with our luxury packaging and personalized gift options—perfect for birthdays, holidays, or just treating yourself.</p>
-      <h1>Lumin Care Protection Plan 🔧</h1>
-      <p>Extend your warranty and get exclusive repair and replacement services for accidental damage, wear and tear, or technical issues.</p>
+      <div className="lumin-content-container">
+        <div className="service-title">
+          <h1>Lumin</h1>
+        </div>
+        <div className="service-content">
+          <h1>Lumin Core Wireless Headphones.</h1>
+          <p>Sleek, over-ear design with memory foam ear cups and a lightweight aluminum frame. Touch-sensitive ear cups for volume, track control, and calls.
+          Built-in voice assistant support (Siri, Google Assistant, Alexa). Customizable EQ through a mobile app.
+          </p>
+          <h1>Coming Soon. . .</h1>
+        </div>
+      </div>
     </div>
   );
 }

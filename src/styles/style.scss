@@ -1,4 +1,6 @@
 @import './_imageSlider.scss';
+@import './_service.scss';
+@import './_navigation.scss';
 
 $white: #ffffff;
 $white-1: #fefffe;
@@ -110,41 +112,6 @@ body {
 
   100% {
     width: 0px;
-  }
-}
-
-.nav-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.nav-container {
-  @include flexContent(row);
-  width: 100%;
-  margin-top: 1.25rem;
-}
-
-.nav-child-container {
-  display: flex;
-  width: 25%;
-  margin-left: 5rem;
-  align-items: center;
-}
-
-.nav-list-container {
-  @include flexContent(row);
-  gap: 2rem;
-  width: 25%;
-  justify-content: end;
-  align-items: center;
-  margin-left: 40%;
-  > li {
-    list-style: none;
-  }
-
-  > button {
-    border: none;
-    background: transparent;
   }
 }
 

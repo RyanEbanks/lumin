@@ -8,26 +8,25 @@ import '../styles/style.css'
 export default function Home() {
   const [activeSlider, setActiveSlider] = useState(0)
 
-const video = [
-  'videos/lumin_1.mp4',
-  'videos/lumin_5.mp4',
-  'videos/new_lumin_2.mp4',
-  'videos/lumin_3.mp4',
-  'videos/lumin_4.mp4',
-];
+  const video = [
+    'videos/lumin_1.mp4',
+    'videos/lumin_5.mp4',
+    'videos/new_lumin_2.mp4',
+    'videos/lumin_3.mp4',
+    'videos/lumin_4.mp4',
+  ];
 
 
-useEffect (()=> {
-  const interval = setInterval(() => {
-    setActiveSlider(prevSlider => (prevSlider >= 4 ? 0 : prevSlider + 1));
-  }, 6000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlider(prevSlider => (prevSlider >= 4 ? 0 : prevSlider + 1));
+    }, 6000);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
-      <Navigation />
       <main className="home">
         <div className="home-container">
           {/* <img src={darkMode ? "LUMIN-dark-theme.svg" : "LUMIN logo.svg"} alt="website logo" className="w-[150px] h-[150px] mr-10" /> */}
@@ -47,7 +46,7 @@ useEffect (()=> {
             <div className="wrapper-holder">
               <div className="slide">
                 <video className="video-container"
-                key={activeSlider} //forces the slider to re-render when the active slider changes
+                  key={activeSlider} //forces the slider to re-render when the active slider changes
                   autoPlay
                   loop
                   muted
@@ -60,24 +59,25 @@ useEffect (()=> {
 
           </div>
         </div>
-          <div className="home-text-container">
-            <div className="home-text-child-container-scroll">
-              <p className="text-for-line-animation">SCROLL</p>
-              <div className="line-animation"></div>
-            </div>
-            <div>
-              <button className="home-text-child-container-discover">
-                Discover
-                <img src="Arrow.svg" alt="right arrow" />
-                </button>
-            </div>
-            <div className="home-text-child-container-scroll">
-              <p className="text-for-line-animation">SCROLL</p>
-              <div className="line-animation"></div>
-            </div>
+        {/* <div className="home-text-container">
+          <div className="home-text-child-container-scroll">
+            <p className="text-for-line-animation">SCROLL</p>
+            <div className="line-animation"></div>
           </div>
-          <About />
-          {/* <Services /> */}
+          <div>
+            <button className="home-text-child-container-discover">
+              Discover
+              <img src="Arrow.svg" alt="right arrow" />
+            </button>
+          </div>
+          <div className="home-text-child-container-scroll">
+            <p className="text-for-line-animation">SCROLL</p>
+            <div className="line-animation"></div>
+          </div>
+        </div> */}
+        {/* <Services /> */}
+        <Navigation />
+        {/* <About /> */}
       </main>
       {/* <Footer /> */}
     </div>

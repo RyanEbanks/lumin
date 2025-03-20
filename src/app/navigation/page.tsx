@@ -27,9 +27,6 @@ export default function Navigation() {
         <div>
             {/* Navigation */}
             <nav className="nav-container">
-                <div className="nav-child-container">
-                    <p>Lumin</p>
-                </div>
                 <ul className="nav-list-container">
                     <li>Home</li>
                     <li>About</li>
