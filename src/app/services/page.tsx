@@ -2,52 +2,58 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setColor } from '../redux/colorSlice';
 import { RootState } from '../redux/store';
+import Navigation from '../navigation/page';
+import { useState } from 'react';
 
 export default function Services() {
   const dispatch = useDispatch();
   const selectedColor = useSelector((state: RootState) => state.color.selectedColor);
+  const [activeIndex, setActiveIndex] = useState(0); 
+  const items = ['headphones/red.svg', 'headphones/green.svg', 'headphones/blue.svg']
+
+  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % items.length);
+  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + items.length) % items.length);
 
   const headphoneColors = [
-    "red",
+    "headphones/red.svg",
     "green",
     "blue"
-  ]
-  
+  ];
+
   return (
-    <div>
-      <div className='service-background p-10 rounded-3xl'>
-        <div className='product-background py-10 rounded-3xl'>
-          <h2>Selected Color: {selectedColor}</h2>
-          <div className='rounded-md h-[500px] w-[500px] mx-auto'>
-            <img src={`headphones/${selectedColor}.svg`} alt={selectedColor} className='w-[400px] h-[400px] m-auto' />
+    <div className='service'>
+      <div className='service-container'>
+        <div className="lumin-content-container">
+          <div className="service-title">
+            <h1>Lumin</h1>
+          </div>
+          <div className="service-content">
+            <h1>Core Wireless Headphones.</h1>
+            <p>Sleek, over-ear design with memory foam ear cups and a lightweight aluminum frame. Touch-sensitive ear cups for volume, track control, and calls.
+              Built-in voice assistant support (Siri, Google Assistant, Alexa). Customizable EQ through a mobile app.
+            </p>
+            <h1>Coming Soon. . .</h1>
           </div>
         </div>
-
-        <div className="mt-4 flex flex-row justify-center">
-          {headphoneColors.map((color) => (
-            <div className='flex flex-row'>
-              <button
-                key={color}
-                className={`m-2 border rounded-full w-4 h-4 ${selectedColor === color ? "bg-gray-400" : ""}`}
-                onClick={() => dispatch(setColor(color))}
-              ></button>
-              <p>{color}</p>
+        <div className="lumin-image-container">
+          <div className="list">
+            <div className="item">
+              <img src={`headphones/red.svg`} alt={selectedColor} className='service-img' />
             </div>
-          ))}
+            <div className="item">
+              <img src={`headphones/green.svg`} alt={selectedColor} className='service-img' />
+            </div>
+            <div className="item">
+              <img src={`headphones/blue.svg`} alt={selectedColor} className='service-img' />
+            </div>
+          </div>
+          <div className="arrows">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+          </div>
         </div>
       </div>
-      <div className="lumin-content-container">
-        <div className="service-title">
-          <h1>Lumin</h1>
-        </div>
-        <div className="service-content">
-          <h1>Lumin Core Wireless Headphones.</h1>
-          <p>Sleek, over-ear design with memory foam ear cups and a lightweight aluminum frame. Touch-sensitive ear cups for volume, track control, and calls.
-          Built-in voice assistant support (Siri, Google Assistant, Alexa). Customizable EQ through a mobile app.
-          </p>
-          <h1>Coming Soon. . .</h1>
-        </div>
-      </div>
+      <Navigation />
     </div>
   );
 }
