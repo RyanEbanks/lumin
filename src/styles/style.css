@@ -33,7 +33,6 @@
   flex-direction: column;
   justify-content: center;
   width: 40%;
-  margin-left: 10%;
 }
 
 .service-title h1 {
@@ -49,24 +48,50 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  margin-right: 10%;
+  width: 50%;
   overflow: hidden;
 }
-.lumin-image-container .carousel {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.lumin-image-container .list {
+  border: solid orange 2px;
+  position: absolute;
+  top: 10px;
+  width: 50%;
+  height: 60%;
+  transform: translateY(-50%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-
-.service-img {
-  width: 700px;
-  height: 700px;
-  margin: auto;
+.lumin-image-container #item-1 {
+  transform: translateX(0);
+  position: absolute;
+  z-index: 30;
+  top: 15rem;
+  left: 0;
+}
+.lumin-image-container #item-1 .service-img {
+  width: 400px;
+  height: 400px;
+}
+.lumin-image-container #item-2 {
+  position: absolute;
+  z-index: 20;
+  top: 5rem;
+  left: 15rem;
+  filter: blur(4px);
+}
+.lumin-image-container #item-2 .service-img {
+  width: 250px;
+  height: 250px;
+}
+.lumin-image-container #item-3 {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 25rem;
+  filter: blur(8px);
+}
+.lumin-image-container #item-3 .service-img {
+  width: 150px;
+  height: 150px;
 }
 
 .nav-icon {

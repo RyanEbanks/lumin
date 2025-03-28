@@ -8,17 +8,27 @@ import { useState } from 'react';
 export default function Services() {
   const dispatch = useDispatch();
   const selectedColor = useSelector((state: RootState) => state.color.selectedColor);
-  const [activeIndex, setActiveIndex] = useState(0); 
-  const items = ['headphones/red.svg', 'headphones/green.svg', 'headphones/blue.svg']
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [items, setItems] = useState(['headphones/hRed-2.svg', 'headphones/hGreen-2.svg', 'headphones/hBlue-2.svg']);
+  const positions = ['item-1', 'item-2', 'item-3'];
 
-  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % items.length);
-  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + items.length) % items.length);
+  function cycleImages(direction: number) {
+    let newItems = [...items];
 
-  const headphoneColors = [
-    "headphones/red.svg",
-    "green",
-    "blue"
-  ];
+    if (direction === 1) {
+      const firstItem = newItems.shift(); //shift adds an element to the back of an array
+      if (firstItem !== undefined) {
+        newItems.push(firstItem);
+      }
+    } else if (direction === -1) {
+      const thirdItem = newItems.pop(); //unshift adds an element to the front of an array
+      if (thirdItem !== undefined) {
+        newItems.unshift(thirdItem);
+      }
+    }
+
+    setItems(newItems);
+  }
 
   return (
     <div className='service'>
@@ -37,19 +47,15 @@ export default function Services() {
         </div>
         <div className="lumin-image-container">
           <div className="list">
-            <div className="item">
-              <img src={`headphones/red.svg`} alt={selectedColor} className='service-img' />
+            {items.map((id, index) => (
+              <div key={id} id={`item-${index + 1}`} className="item">
+                <img src={`${items[index]}`} alt={selectedColor} className='service-img' />
+              </div>
+            ))}
+            <div className="arrows">
+              <button id="prev" onClick={() => cycleImages(-1)}>&lt;</button>
+              <button id="next" onClick={() => cycleImages(1)}>&gt;</button>
             </div>
-            <div className="item">
-              <img src={`headphones/green.svg`} alt={selectedColor} className='service-img' />
-            </div>
-            <div className="item">
-              <img src={`headphones/blue.svg`} alt={selectedColor} className='service-img' />
-            </div>
-          </div>
-          <div className="arrows">
-            <button id="prev">&lt;</button>
-            <button id="next">&gt;</button>
           </div>
         </div>
       </div>
